@@ -27,9 +27,9 @@ try:
         
         # Extraer productos de la página actual
         for card in cards:
-            title = card.find("h3", {"class": "products-feed__product-name"}).text.strip()
-            price = card.find("p", {"class": "products-feed__product-price"}).text.strip()
-            image = card.find("img", {"class": "products-feed__product-image"}).get("src")
+            title = card.find("h3", {"class": "products-feed__product-name"}).text.strip() #cambiar atributo a inspeccionar "h3" // class o id 
+            price = card.find("p", {"class": "products-feed__product-price"}).text.strip() #cambiar atributo a inspeccionar "h3" // class o id 
+            image = card.find("img", {"class": "products-feed__product-image"}).get("src") #cambiar atributo a inspeccionar "h3" // class o id 
             all_products.append({
                 "title": title,
                 "price": price,
@@ -42,7 +42,7 @@ try:
         
         # Intentar encontrar el botón de paginación
         try:
-            load_more_button = driver.find_element(By.ID, "products_feed-btn")
+            load_more_button = driver.find_element(By.ID, "products_feed-btn") #cambiar atributo a inspeccionar "h3" // class o id 
             if "display: none" in load_more_button.get_attribute("style"):
                 print("No hay más páginas.")
                 break
